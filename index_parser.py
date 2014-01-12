@@ -67,7 +67,7 @@ def parse_index(bs):
         'titles':[]
     }
 
-    for i in range(0,index['num_titles']-1):
+    for i in range(0,index['num_titles']):
         index['titles'].append({
             'pos':bs.pos,
             'object_type':bs.read('uint:2'),
@@ -114,7 +114,7 @@ class Index:
         elif item == 'indexes':
             return self.indexes
         else:
-            raise AttributeError("Attribute %s not found!")
+            raise AttributeError("Attribute %s not found!"%item)
 
 
 
